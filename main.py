@@ -42,7 +42,7 @@ class usersData:
         return -1
 
     def register(self, username: str, password: str):
-        if self.check_if_username_exists(username) == -1:
+        if self.check_if_username_exists(username) != -1:
             print('user with this username already exists, try different one')
             return False
         hash, salt = generate_hash(password)
